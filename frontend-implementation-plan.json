@@ -1,0 +1,119 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Tri Vibe Clothing Brand Landing Page - Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build full-page landing site with navigation, hero, collections grid, best sellers, newsletter, and footer sections",
+      "acceptanceCriteria": [
+        "Navigation is fixed at top with frosted glass blur effect and TRI VIBE logo with triangle SVG icon",
+        "Hero section fills the viewport with animated fade-in and slide-in text elements",
+        "Featured Apex Hoodie card displays with glass-card style, NEW badge, triangle SVG, price, and Add to Cart button",
+        "Three Vibes section shows BOLD, FLOW, and EDGE collection cards in a 3-column grid",
+        "Best Sellers shows 4 product cards in a responsive grid (1-2-4 column breakpoints)",
+        "Newsletter form clears input and changes button text to 'Subscribed! ✓' on submit",
+        "Footer renders 4 columns with all link groups and social icons",
+        "Page is fully responsive across mobile, tablet, and desktop breakpoints"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Replace default app content with Tri Vibe landing page structure including Navigation, Hero, ThreeVibes, BestSellers, Newsletter, and Footer sections. Wire all newly created components into the main App component to render the complete single-page layout."
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "create",
+          "description": "Create fixed navigation bar component with frosted glass blur effect, TRI VIBE logo with triangle SVG icon, nav links (Collections, About, Contact), and Shop Now button. Apply sticky positioning and backdrop-filter blur styling."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "create",
+          "description": "Create hero section component with tagline 'Define Your Energy', large display heading 'TRI VIBE', subtext, two CTA buttons ('Explore Collection' and 'Our Story'), and featured Apex Hoodie product card with NEW badge, triangle SVG placeholder, $89 price, and Add to Cart button. Apply full viewport height and animated entrance effects."
+        },
+        {
+          "path": "frontend/src/components/ThreeVibes.tsx",
+          "operation": "create",
+          "description": "Create Three Vibes collections section with 3-column grid displaying BOLD, FLOW, and EDGE collection cards. Each card uses glass-card styling with triangle SVG motifs and collection descriptions."
+        },
+        {
+          "path": "frontend/src/components/BestSellers.tsx",
+          "operation": "create",
+          "description": "Create Best Sellers product grid section displaying Vibe Tee ($45), Track Pants ($75), Logo Cap ($35), and Crew Socks ($25). Implement responsive grid layout (1 column mobile, 2 columns tablet, 4 columns desktop) with glass-card styling and triangle SVG placeholders for each product."
+        },
+        {
+          "path": "frontend/src/components/Newsletter.tsx",
+          "operation": "create",
+          "description": "Create Newsletter/Join the Tribe section with email signup form offering 15% off first order. Form will be wired to call backend subscribeEmail function in REQ-3 implementation."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "create",
+          "description": "Create four-column footer component with Shop, Help, and Connect link groups, social media icons, and copyright notice. Apply dark background styling consistent with brand aesthetic."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply dark streetwear aesthetic with custom design tokens, Bebas Neue and Inter fonts, glass-card styling, and animated entrance effects",
+      "acceptanceCriteria": [
+        "CSS custom properties (--bg-color, --primary-color, --accent-color, --text-color, --secondary-color) are defined and used consistently",
+        "Bebas Neue font is loaded from Google Fonts and applied to all headings and display text",
+        "Inter font is loaded from Google Fonts and applied to body/paragraph text",
+        "Glass-card component style (backdrop-filter blur, semi-transparent border) is applied to all product and collection cards",
+        "fadeInUp and slideIn CSS keyframe animations trigger on hero section text elements on page load",
+        "Radial blur decorative blobs in primary and accent colors appear in the hero section background"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define CSS custom properties for brand colors (--bg-color: #0f0f0f, --secondary-color: #1a1a2e, --text-color: #ffffff, --primary-color: #e94560, --accent-color: #ff6b6b). Import Bebas Neue and Inter fonts from Google Fonts. Define glass-card utility class with backdrop-filter blur and semi-transparent border. Add fadeInUp and slideIn keyframe animations for hero text entrance effects."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme to include custom brand colors (primary: #e94560, accent: #ff6b6b, background: #0f0f0f, secondary: #1a1a2e) and font families (Bebas Neue for display, Inter for body). Configure backdrop-filter and animation utilities to support glass-card effects and entrance animations."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Add Google Fonts preconnect links and font stylesheet link for Bebas Neue and Inter (weights 300-600) in the document head."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Connect newsletter form to backend subscribeEmail function to persist email subscribers",
+      "acceptanceCriteria": [
+        "Frontend form on submit calls the backend function via the actor hook",
+        "On successful subscription, the button text changes to 'Subscribed! ✓' and the input is cleared",
+        "On duplicate or error, a visible inline error or 'Already subscribed' message is shown"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Newsletter.tsx",
+          "operation": "modify",
+          "description": "Wire newsletter form submit handler to call backend subscribeEmail function using the useBackend hook. On successful subscription (true return), clear input and change button text to 'Subscribed! ✓'. On duplicate (false return) or error, display inline 'Already subscribed' or error message below the form."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Integrate generated hero background image into hero section",
+      "acceptanceCriteria": [
+        "Hero background image is rendered from frontend/public/assets/generated/hero-bg.dim_1920x1080.jpg",
+        "Image is applied as a CSS background-image on the hero section with cover sizing and center positioning",
+        "A dark overlay is layered on top of the image to maintain text legibility"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Apply the generated hero background image from frontend/public/assets/generated/hero-bg.dim_1920x1080.jpg as a CSS background-image on the hero section container. Use background-size: cover and background-position: center. Layer a dark semi-transparent overlay (e.g., rgba(0,0,0,0.5)) on top of the background image to ensure text legibility while preserving the abstract fabric texture and triangle grid overlay aesthetic."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "frontend/index.html": "HTML entry point with Google Fonts preconnect and stylesheet links for Bebas Neue and Inter fonts.",
+  "frontend/src/index.css": "Global styles defining the Tri Vibe dark brand design system with OKLCH color tokens, glass-card utility, tri-gradient background, and CSS keyframe animations (fadeInUp, slideIn, hoverPulse).",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with Bebas Neue/Inter font families, brand color tokens, glow shadow, and all shadcn/ui color mappings.",
+  "frontend/src/hooks/useQueries.ts": "React Query mutation hook for subscribing emails via the backend actor's subscribeEmail function.",
+  "frontend/src/App.tsx": "Root application component composing all landing page sections: Navigation, Hero, ThreeVibes, BestSellers, Newsletter, and Footer.",
+  "frontend/src/components/Navigation.tsx": "Fixed frosted-glass navigation bar with TRI VIBE logo, desktop nav links, Shop Now CTA, and a mobile hamburger menu toggle.",
+  "frontend/src/components/Hero.tsx": "Full-viewport hero section with hero background image, dark overlay, decorative blobs, animated tagline/heading/subtext, two CTA buttons, and the featured Apex Hoodie glass card.",
+  "frontend/src/components/ThreeVibes.tsx": "Three Vibes collections grid section displaying BOLD, FLOW, and EDGE cards with triangle SVG motifs and glass-card styling.",
+  "frontend/src/components/BestSellers.tsx": "Best Sellers product grid section with four product cards (Vibe Tee, Track Pants, Logo Cap, Crew Socks) in a responsive 1-2-4 column layout.",
+  "frontend/src/components/Newsletter.tsx": "Newsletter signup section wired to the backend subscribeEmail mutation, showing success state, already-subscribed message, and loading spinner.",
+  "frontend/src/components/Footer.tsx": "Four-column footer with brand info, Shop/Help link groups, social icons (X, Instagram, YouTube), copyright, and caffeine.ai attribution."
+}

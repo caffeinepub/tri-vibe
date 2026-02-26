@@ -1,0 +1,79 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T06:30:08.511Z",
+  "summary": "The diff implements most requirements well: the full landing page structure (REQ-1), dark streetwear aesthetic with fonts and animations (REQ-2), backend subscribeEmail function and frontend wiring (REQ-3), and hero background image usage (REQ-4). However, several specific acceptance criteria are missing or only partially met.",
+  "missing_requirements": [
+    {
+      "id": "REQ-2",
+      "requirement": "CSS custom properties --bg-color, --primary-color, --accent-color, --text-color, --secondary-color must be defined and used consistently",
+      "reason": "The diff uses OKLCH-based brand tokens (--brand-bg, --brand-primary, --brand-accent, --brand-text, --brand-secondary) and Tailwind CSS variables, but the specifically required variable names --bg-color, --primary-color, --accent-color, --text-color, --secondary-color are not defined anywhere in the CSS files.",
+      "evidence": [
+        "frontend/src/index.css",
+        "frontend/index.css"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "Backend subscribeEmail must persist emails in a stable array or HashMap",
+      "reason": "The backend uses Map.empty() from mo:core/Map which is not declared as 'stable', meaning it will not survive canister upgrades. The requirement explicitly calls for a stable array or HashMap.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Hero background image must be present at frontend/public/assets/generated/hero-bg.dim_1920x1080.jpg",
+      "reason": "The diff contains no evidence that the image file was added to frontend/public/assets/generated/. The Hero component references the path but no image file is included in the added files list.",
+      "evidence": [
+        "frontend/src/components/Hero.tsx"
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "requirement": "Newsletter form button text changes to 'Subscribed! ✓' on submit",
+      "reason": "On successful subscription the UI shows a success div with 'You're in! Welcome to the tribe.' text rather than changing the button text to 'Subscribed! ✓' as explicitly required by the acceptance criteria.",
+      "evidence": [
+        "frontend/src/components/Newsletter.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Mobile hamburger menu with open/close toggle animation and state management",
+      "reason": "The Navigation component implements a full stateful mobile menu toggle with open/close logic using useState and renders a dropdown. The non-goals explicitly state no mobile hamburger menu open/close animation and that static nav links for mobile is acceptable.",
+      "evidence": [
+        "frontend/src/components/Navigation.tsx"
+      ]
+    },
+    {
+      "description": "Loading spinner with 'Joining...' text during newsletter form submission",
+      "reason": "The Newsletter component shows a Loader2 spinner and 'Joining...' label while the mutation is pending. This loading state UI was not requested in any requirement or acceptance criteria.",
+      "evidence": [
+        "frontend/src/components/Newsletter.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/BestSellers.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Hero.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/components/Newsletter.tsx",
+    "frontend/src/components/ThreeVibes.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

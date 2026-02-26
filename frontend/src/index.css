@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+
+    /* Tri Vibe Brand Tokens (OKLCH) */
+    --brand-bg: oklch(0.12 0.005 260);
+    --brand-secondary: oklch(0.16 0.04 260);
+    --brand-primary: oklch(0.55 0.22 15);
+    --brand-accent: oklch(0.65 0.18 20);
+    --brand-text: oklch(0.98 0 0);
+    --brand-muted: oklch(0.65 0.005 260);
+
+    /* Shadcn tokens mapped to dark brand palette */
+    --background: 0.12 0.005 260;
+    --foreground: 0.98 0 0;
+    --card: 0.16 0.04 260;
+    --card-foreground: 0.98 0 0;
+    --popover: 0.16 0.04 260;
+    --popover-foreground: 0.98 0 0;
+    --primary: 0.55 0.22 15;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.20 0.03 260;
+    --secondary-foreground: 0.98 0 0;
+    --muted: 0.20 0.03 260;
+    --muted-foreground: 0.65 0.005 260;
+    --accent: 0.65 0.18 20;
+    --accent-foreground: 0.12 0.005 260;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.98 0 0 / 8%;
+    --input: 0.98 0 0 / 12%;
+    --ring: 0.55 0.22 15;
+    --chart-1: 0.55 0.22 15;
+    --chart-2: 0.65 0.18 20;
+    --chart-3: 0.40 0.10 260;
+    --chart-4: 0.70 0.15 50;
+    --chart-5: 0.60 0.20 340;
+    --sidebar: 0.14 0.02 260;
+    --sidebar-foreground: 0.98 0 0;
+    --sidebar-primary: 0.55 0.22 15;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.20 0.03 260;
+    --sidebar-accent-foreground: 0.98 0 0;
+    --sidebar-border: 0.98 0 0 / 8%;
+    --sidebar-ring: 0.55 0.22 15;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .tri-gradient {
+    background: linear-gradient(135deg, oklch(0.12 0.005 260) 0%, oklch(0.09 0.003 260) 50%, oklch(0.16 0.04 260) 100%);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hoverPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-up-delay {
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.hover-pulse:hover {
+  animation: hoverPulse 0.5s ease-in-out;
+}

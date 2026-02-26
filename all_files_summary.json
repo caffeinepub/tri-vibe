@@ -1,0 +1,21 @@
+{
+  "backend/main.mo": "Motoko actor that maintains a set of email subscribers and exposes a `subscribeEmail` function returning true on new subscription or false if already subscribed.",
+  "feature_evidence.json": "Feature evidence report mapping two landing-page features (full-page sections and dark streetwear design tokens) to their implementing source files, components, and test IDs.",
+  "frontend-file-summaries.txt": "JSON dictionary providing one-line descriptions of every frontend source file, serving as a quick reference for the project's file structure and responsibilities.",
+  "frontend/index.css": "Global Tailwind CSS entry point defining OKLCH-based design tokens for light and dark themes, including background, foreground, card, and chart color variables.",
+  "frontend/index.html": "HTML shell for the Tri Vibe app that loads Bebas Neue and Inter from Google Fonts and mounts the React app via `src/main.tsx`.",
+  "frontend/src/App.tsx": "Root React component that composes the full landing page by rendering Navigation, Hero, ThreeVibes, BestSellers, Newsletter, and Footer in order.",
+  "frontend/src/components/BestSellers.tsx": "Best Sellers section rendering four glass-card product tiles (Vibe Tee, Track Pants, Logo Cap, Crew Socks) with symbol icons, prices, and a 'View All Products' link.",
+  "frontend/src/components/Footer.tsx": "Four-column footer with the TRI VIBE brand block, Shop and Help link lists, social icon buttons (X, Instagram, YouTube), and a copyright/attribution bar.",
+  "frontend/src/components/Hero.tsx": "Full-viewport hero section with a background image, animated tagline/heading/subtext, two CTA buttons, decorative blobs, and an Apex Hoodie glass product card with nested triangle SVG imagery.",
+  "frontend/src/components/Navigation.tsx": "Responsive navigation bar with a logo, desktop links, a 'Shop Now' button, and a mobile hamburger menu toggle.",
+  "frontend/src/components/Newsletter.tsx": "Email newsletter subscription section that calls the backend `subscribeEmail` mutation and handles success, pending, and already-subscribed states.",
+  "frontend/src/components/ThreeVibes.tsx": "Displays three product collection cards (Bold, Flow, Edge) in a responsive grid with gradient backgrounds and SVG triangle icons.",
+  "frontend/src/hooks/useActor.ts": "Custom hook that creates and caches an ICP backend actor (anonymous or authenticated) using React Query, invalidating dependent queries when the identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides an `InternetIdentityProvider` and `useInternetIdentity` hook for managing ICP Internet Identity authentication state, including login, logout, and identity persistence.",
+  "frontend/src/hooks/useQueries.ts": "Exports the `useSubscribeEmail` mutation hook that calls the backend actor's `subscribeEmail` method.",
+  "frontend/src/index.css": "Global stylesheet defining Tailwind base/utilities, OKLCH brand design tokens, glass-card and gradient utility classes, and keyframe animations.",
+  "frontend/src/main.tsx": "Application entry point that mounts the React app wrapped with `QueryClientProvider` and `InternetIdentityProvider`.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration for the Tri Vibe frontend, extending the theme with custom fonts (Bebas Neue, Inter), brand/UI color tokens using oklch CSS variables, border radius, box shadows, and keyframe animations for accordion and fade effects. Includes plugins for typography, container queries, and animate.",
+  "project_state.json": "Tracks the current state of the Tri Vibe clothing brand landing page project, documenting existing features, architectural notes, known issues, and image requirements across schema version 1.0.0 at project state version 3."
+}

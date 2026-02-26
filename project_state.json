@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Tri Vibe clothing brand landing page with dark aesthetic, featuring hero section, three collections (Bold, Flow, Edge), best sellers product grid, newsletter signup, and footer. Configurable brand name, colors, typography, and hero content via SDK.",
+  "architectural_notes": [
+    "Uses Tailwind CSS 3.4.17 via CDN and Google Fonts (Bebas Neue, Inter)",
+    "Element SDK and Data SDK integrated for config-driven customization",
+    "CSS custom properties (--bg-color, --primary-color, etc.) drive theming throughout",
+    "onConfigChange function handles live updates to brand name, colors, fonts, and hero content"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Dark abstract fabric texture with faint geometric triangle grid overlay, deep crimson red tones on near-black background, full-bleed editorial style (hero-bg.dim_1920x1080.jpg)",
+  "existing_features": [
+    {
+      "id": "feature-build-a-full-page-landing-site-for-tri-vibe-a-clothing-brand-with-the-following-sections-1-fixed-navigation-bar-with-logo-nav-links-collections-about-contact-and-a-shop-now-button-2-hero-section-with-tagline-define-your-energy-large-display-heading-tri-vibe-subtext-where-three-dimensions-of-style-converge-bold-authentic-unstoppable-two-ctas-explore-collection-and-our-story-and-a-featured-product-card-for-apex-hoodie-89-with-an-add-to-cart-button-3-three-vibes-collections-grid-with-bold-flow-and-edge-cards-4-best-sellers-product-grid-with-vibe-tee-45-track-pants-75-logo-cap-35-and-crew-socks-25-5-newsletter-join-the-tribe-section-with-email-signup-form-offering-15-off-first-order-6-four-column-footer-with-shop-help-and-connect-links-and-copyright-notice",
+      "title": "Build a full-page landing site for 'Tri Vibe', a clothing brand, with the following sections: (1) fixed navigation bar with logo, nav links (Collections, About, Contact), and a 'Shop Now' button; (2) hero section with tagline 'Define Your Energy', large display heading 'TRI VIBE', subtext 'Where three dimensions of style converge. Bold. Authentic. Unstoppable.', two CTAs ('Explore Collection' and 'Our Story'), and a featured product card for 'Apex Hoodie' ($89) with an 'Add to Cart' button; (3) Three Vibes collections grid with BOLD, FLOW, and EDGE cards; (4) Best Sellers product grid with Vibe Tee ($45), Track Pants ($75), Logo Cap ($35), and Crew Socks ($25); (5) Newsletter/Join the Tribe section with email signup form offering 15% off first order; (6) four-column footer with Shop, Help, and Connect links and copyright notice.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-dark-streetwear-aesthetic-throughout-the-app-using-the-following-design-tokens-background-0f0f0f-secondary-card-background-1a1a2e-text-white-ffffff-primary-accent-e94560-crimson-red-accent-ff6b6b-coral-use-bebas-neue-google-fonts-for-display-headings-and-inter-300-600-weights-for-body-text-decorative-triangle-svg-motifs-nested-polygon-outlines-are-used-as-brand-icons-and-product-imagery-placeholders-glass-card-style-rgba-white-3-fill-blur-backdrop-subtle-white-border-is-used-for-all-cards-animated-entrance-effects-fadeinup-slidein-apply-to-hero-text-on-load",
+      "title": "Apply a dark streetwear aesthetic throughout the app using the following design tokens: background #0f0f0f, secondary/card background #1a1a2e, text white (#ffffff), primary accent #e94560 (crimson red), accent #ff6b6b (coral). Use 'Bebas Neue' (Google Fonts) for display headings and 'Inter' (300–600 weights) for body text. Decorative triangle SVG motifs (nested polygon outlines) are used as brand icons and product imagery placeholders. Glass-card style (rgba white 3% fill, blur backdrop, subtle white border) is used for all cards. Animated entrance effects (fadeInUp, slideIn) apply to hero text on load.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-store-newsletter-email-subscribers-in-the-motoko-backend-provide-a-public-subscribeemail-email-text-async-bool-function-that-records-the-email-and-returns-true-on-success-or-false-if-already-subscribed-the-frontend-newsletter-form-should-call-this-function-on-submit-instead-of-the-inline-js-handler",
+      "title": "Store newsletter email subscribers in the Motoko backend. Provide a public `subscribeEmail(email: Text) : async Bool` function that records the email and returns true on success (or false if already subscribed). The frontend newsletter form should call this function on submit instead of the inline JS handler.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-a-hero-background-image-for-the-tri-vibe-landing-page-a-dark-abstract-textile-fabric-texture-with-faint-geometric-triangle-grid-overlays-in-deep-crimson-red-tones-on-near-black-background-suitable-as-a-full-bleed-hero-section-background",
+      "title": "Generate a hero background image for the Tri Vibe landing page: a dark abstract textile/fabric texture with faint geometric triangle grid overlays in deep crimson red tones on near-black background, suitable as a full-bleed hero section background.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [],
+  "gameProjectType": "none",
+  "projectName": "Tri Vibe",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

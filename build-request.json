@@ -1,0 +1,113 @@
+{
+  "kind": "build_request",
+  "title": "Tri Vibe Clothing Brand Landing Page",
+  "projectName": "Tri Vibe",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Build a full-page landing site for 'Tri Vibe', a clothing brand, with the following sections: (1) fixed navigation bar with logo, nav links (Collections, About, Contact), and a 'Shop Now' button; (2) hero section with tagline 'Define Your Energy', large display heading 'TRI VIBE', subtext 'Where three dimensions of style converge. Bold. Authentic. Unstoppable.', two CTAs ('Explore Collection' and 'Our Story'), and a featured product card for 'Apex Hoodie' ($89) with an 'Add to Cart' button; (3) Three Vibes collections grid with BOLD, FLOW, and EDGE cards; (4) Best Sellers product grid with Vibe Tee ($45), Track Pants ($75), Logo Cap ($35), and Crew Socks ($25); (5) Newsletter/Join the Tribe section with email signup form offering 15% off first order; (6) four-column footer with Shop, Help, and Connect links and copyright notice.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Tri Vibe - Clothing Brand",
+          "Define Your Energy",
+          "Where three dimensions of style converge. Bold. Authentic. Unstoppable.",
+          "Join the Tribe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation is fixed at top with frosted glass blur effect and TRI VIBE logo with triangle SVG icon",
+        "Hero section fills the viewport with animated fade-in and slide-in text elements",
+        "Featured Apex Hoodie card displays with glass-card style, NEW badge, triangle SVG, price, and Add to Cart button",
+        "Three Vibes section shows BOLD, FLOW, and EDGE collection cards in a 3-column grid",
+        "Best Sellers shows 4 product cards in a responsive grid (1-2-4 column breakpoints)",
+        "Newsletter form clears input and changes button text to 'Subscribed! ✓' on submit",
+        "Footer renders 4 columns with all link groups and social icons",
+        "Page is fully responsive across mobile, tablet, and desktop breakpoints"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Apply a dark streetwear aesthetic throughout the app using the following design tokens: background #0f0f0f, secondary/card background #1a1a2e, text white (#ffffff), primary accent #e94560 (crimson red), accent #ff6b6b (coral). Use 'Bebas Neue' (Google Fonts) for display headings and 'Inter' (300–600 weights) for body text. Decorative triangle SVG motifs (nested polygon outlines) are used as brand icons and product imagery placeholders. Glass-card style (rgba white 3% fill, blur backdrop, subtle white border) is used for all cards. Animated entrance effects (fadeInUp, slideIn) apply to hero text on load.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "--bg-color: #0f0f0f",
+          "--primary-color: #e94560",
+          "--accent-color: #ff6b6b",
+          "font-family: 'Bebas Neue'",
+          "glass-card"
+        ]
+      },
+      "acceptanceCriteria": [
+        "CSS custom properties (--bg-color, --primary-color, --accent-color, --text-color, --secondary-color) are defined and used consistently",
+        "Bebas Neue font is loaded from Google Fonts and applied to all headings and display text",
+        "Inter font is loaded from Google Fonts and applied to body/paragraph text",
+        "Glass-card component style (backdrop-filter blur, semi-transparent border) is applied to all product and collection cards",
+        "fadeInUp and slideIn CSS keyframe animations trigger on hero section text elements on page load",
+        "Radial blur decorative blobs in primary and accent colors appear in the hero section background"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Store newsletter email subscribers in the Motoko backend. Provide a public `subscribeEmail(email: Text) : async Bool` function that records the email and returns true on success (or false if already subscribed). The frontend newsletter form should call this function on submit instead of the inline JS handler.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Get exclusive drops, early access, and 15% off your first order.",
+          "onsubmit=\"event.preventDefault(); this.querySelector('button').textContent = 'Subscribed! ✓'"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes a `subscribeEmail` query/update that persists emails in a stable array or HashMap",
+        "Duplicate email submissions return false without adding a second entry",
+        "Frontend form on submit calls the backend function via the actor hook",
+        "On successful subscription, the button text changes to 'Subscribed! ✓' and the input is cleared",
+        "On duplicate or error, a visible inline error or 'Already subscribed' message is shown"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Generate a hero background image for the Tri Vibe landing page: a dark abstract textile/fabric texture with faint geometric triangle grid overlays in deep crimson red tones on near-black background, suitable as a full-bleed hero section background.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero background image is rendered from frontend/public/assets/generated/hero-bg.dim_1920x1080.jpg",
+        "Image is applied as a CSS background-image on the hero section with cover sizing and center positioning",
+        "A dark overlay is layered on top of the image to maintain text legibility"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not use blue or purple as primary brand colors — the palette is dark charcoal, crimson red (#e94560), and coral (#ff6b6b)",
+    "All Motoko logic must remain in a single actor in backend/main.mo",
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "No actual e-commerce checkout or payment processing",
+    "No product inventory management or cart persistence in the backend",
+    "No user authentication or login flows",
+    "No real-time features or WebSockets",
+    "No mobile hamburger menu open/close animation (static nav links for mobile is acceptable)"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Dark abstract fabric texture with faint geometric triangle grid overlay, deep crimson red tones on near-black background, full-bleed editorial style (hero-bg.dim_1920x1080.jpg)"
+    ],
+    "edits": []
+  }
+}
